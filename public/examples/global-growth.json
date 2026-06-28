@@ -1,0 +1,36 @@
+{
+  "id": "example-global-growth",
+  "name": "Global Growth",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "updatedAt": "2026-01-01T00:00:00.000Z",
+  "root": {
+    "id": "gg-root", "name": "Portfolio Root", "nodeType": "folder", "weight": 0, "tilt": 0,
+    "children": [
+      {
+        "id": "gg-eq", "name": "Equity", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "gg-vti", "name": "US Total Market ETF", "nodeType": "asset", "weight": 25, "tilt": 0, "assetId": "vti", "children": [] },
+          { "id": "gg-qqq", "name": "Nasdaq 100 ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "qqq", "children": [] },
+          { "id": "gg-vgk", "name": "European Equity ETF", "nodeType": "asset", "weight": 12, "tilt": 0, "assetId": "vgk", "children": [] },
+          { "id": "gg-vwo", "name": "Emerging Markets ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "vwo", "children": [] },
+          { "id": "gg-ewj", "name": "Japan Equity ETF", "nodeType": "asset", "weight": 8, "tilt": 0, "assetId": "ewj", "children": [] }
+        ]
+      },
+      {
+        "id": "gg-fi", "name": "Fixed Income", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "gg-tlt", "name": "US 20+ Yr Treasury ETF", "nodeType": "asset", "weight": 15, "tilt": 0, "assetId": "tlt", "children": [] },
+          { "id": "gg-hyg", "name": "High Yield Bond ETF", "nodeType": "asset", "weight": 5, "tilt": 0, "assetId": "hyg", "children": [] }
+        ]
+      },
+      {
+        "id": "gg-alt", "name": "Alternatives", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "gg-gld", "name": "Gold ETF", "nodeType": "asset", "weight": 8, "tilt": 0, "assetId": "gld", "children": [] },
+          { "id": "gg-bci", "name": "Bloomberg Commodity ETF", "nodeType": "asset", "weight": 4, "tilt": 0, "assetId": "bci", "children": [] },
+          { "id": "gg-vnq", "name": "US Real Estate ETF", "nodeType": "asset", "weight": 3, "tilt": 0, "assetId": "vnq", "children": [] }
+        ]
+      }
+    ]
+  }
+}

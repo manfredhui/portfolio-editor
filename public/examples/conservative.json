@@ -1,0 +1,33 @@
+{
+  "id": "example-conservative",
+  "name": "Conservative Income",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "updatedAt": "2026-01-01T00:00:00.000Z",
+  "root": {
+    "id": "con-root", "name": "Portfolio Root", "nodeType": "folder", "weight": 0, "tilt": 0,
+    "children": [
+      {
+        "id": "con-fi", "name": "Fixed Income", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "con-tlt", "name": "US 20+ Yr Treasury ETF", "nodeType": "asset", "weight": 30, "tilt": 0, "assetId": "tlt", "children": [] },
+          { "id": "con-ieag", "name": "EUR Aggregate Bond ETF", "nodeType": "asset", "weight": 15, "tilt": 0, "assetId": "ieag", "children": [] },
+          { "id": "con-tip", "name": "US TIPS ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "tip", "children": [] }
+        ]
+      },
+      {
+        "id": "con-eq", "name": "Equity", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "con-vti", "name": "US Total Market ETF", "nodeType": "asset", "weight": 20, "tilt": 0, "assetId": "vti", "children": [] },
+          { "id": "con-vgk", "name": "European Equity ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "vgk", "children": [] }
+        ]
+      },
+      {
+        "id": "con-alt", "name": "Alternatives", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "con-gld", "name": "Gold ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "gld", "children": [] },
+          { "id": "con-vnq", "name": "US Real Estate ETF", "nodeType": "asset", "weight": 5, "tilt": 0, "assetId": "vnq", "children": [] }
+        ]
+      }
+    ]
+  }
+}

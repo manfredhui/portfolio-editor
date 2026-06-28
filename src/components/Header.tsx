@@ -4,11 +4,13 @@ import { getTotalWeight, isPortfolioValid } from '../utils/portfolioUtils';
 import { savePortfolio } from '../utils/fileUtils';
 import { loadPortfolio as loadPortfolioFile } from '../utils/fileUtils';
 import { NewPortfolioDialog } from './Dialogs';
+import { PortfolioLibraryModal } from './PortfolioLibraryModal';
 
 export function Header() {
   const { portfolio, newPortfolio, loadPortfolio, renameNode, allowAbstractAssets, setAllowAbstractAssets } = usePortfolio();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [showNewDialog, setShowNewDialog] = useState(false);
+  const [showLibrary, setShowLibrary] = useState(false);
   const [editingName, setEditingName] = useState(false);
   const [nameValue, setNameValue] = useState('');
 
@@ -106,8 +108,9 @@ export function Header() {
           </div>
         )}
         <button className="btn btn-secondary" onClick={() => setShowNewDialog(true)}>New</button>
-        <button className="btn btn-secondary" onClick={handleLoadClick}>Load</button>
-        <button className="btn btn-primary" onClick={handleSave} disabled={!portfolio}>Save</button>
+        <button className="btn btn-secondary" onClick={() => setShowLibrary(true)}>☁ Library</button>
+        <button className="btn btn-secondary" onClick={handleLoadClick}>Load File</button>
+        <button className="btn btn-primary" onClick={handleSave} disabled={!portfolio}>Save File</button>
         <input
           ref={fileInputRef}
           type="file"
@@ -121,6 +124,13 @@ export function Header() {
         <NewPortfolioDialog
           onConfirm={handleNewConfirm}
           onClose={() => setShowNewDialog(false)}
+        />
+      )}
+      {showLibrary && (
+        <PortfolioLibraryModal
+          currentPortfolio={portfolio}
+          onLoad={loadPortfolio}
+          onClose={() => setShowLibrary(false)}
         />
       )}
     </header>

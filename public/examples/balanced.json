@@ -1,0 +1,28 @@
+{
+  "id": "example-balanced",
+  "name": "Balanced 60/40",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "updatedAt": "2026-01-01T00:00:00.000Z",
+  "root": {
+    "id": "bal-root", "name": "Portfolio Root", "nodeType": "folder", "weight": 0, "tilt": 0,
+    "children": [
+      {
+        "id": "bal-eq", "name": "Equity (60%)", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "bal-vti", "name": "US Total Market ETF", "nodeType": "asset", "weight": 30, "tilt": 0, "assetId": "vti", "children": [] },
+          { "id": "bal-vgk", "name": "European Equity ETF", "nodeType": "asset", "weight": 15, "tilt": 0, "assetId": "vgk", "children": [] },
+          { "id": "bal-vwo", "name": "Emerging Markets ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "vwo", "children": [] },
+          { "id": "bal-ewj", "name": "Japan Equity ETF", "nodeType": "asset", "weight": 5, "tilt": 0, "assetId": "ewj", "children": [] }
+        ]
+      },
+      {
+        "id": "bal-fi", "name": "Fixed Income (40%)", "nodeType": "folder", "weight": 0, "tilt": 0, "collapsed": false,
+        "children": [
+          { "id": "bal-tlt", "name": "US 20+ Yr Treasury ETF", "nodeType": "asset", "weight": 20, "tilt": 0, "assetId": "tlt", "children": [] },
+          { "id": "bal-ieag", "name": "EUR Aggregate Bond ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "ieag", "children": [] },
+          { "id": "bal-tip", "name": "US TIPS ETF", "nodeType": "asset", "weight": 10, "tilt": 0, "assetId": "tip", "children": [] }
+        ]
+      }
+    ]
+  }
+}

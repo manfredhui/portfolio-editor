@@ -221,10 +221,10 @@ export function TreeNode({ node, depth, isLast, parentLines, isBundleChild = fal
               {node.name}
             </span>
           )}
-          {isAbstractAsset && (
+          {isAbstractAsset && !allowAbstractAssets && (
             <>
               <select
-                className={`link-asset-select${!node.linkedAssetId && !allowAbstractAssets ? ' link-asset-select-warn' : ''}`}
+                className={`link-asset-select${!node.linkedAssetId ? ' link-asset-select-warn' : ''}`}
                 value={node.linkedAssetId ?? ''}
                 onChange={(e) => linkAbstractAsset(node.id, e.target.value)}
               >
@@ -233,7 +233,7 @@ export function TreeNode({ node, depth, isLast, parentLines, isBundleChild = fal
                   <option key={a.id} value={a.id}>{a.ticker} – {a.name}</option>
                 ))}
               </select>
-              {!node.linkedAssetId && !allowAbstractAssets && (
+              {!node.linkedAssetId && (
                 <span className="unlinked-warn" title="Benchmark slot must be linked to a real asset">⚠</span>
               )}
             </>

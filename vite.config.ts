@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import type { IncomingMessage, ServerResponse } from 'node:http'
+import fs from 'node:fs'
+import path from 'node:path'
 
 // ─── TAA Mock Service ────────────────────────────────────────────────────────
 // In production this would be a real alpha / risk-model API.
@@ -126,6 +128,34 @@ function parseBody(req: IncomingMessage): Promise<unknown> {
   })
 }
 
+function parseRawBody(req: IncomingMessage): Promise<string> {
+  return new Promise((resolve, reject) => {
+    let body = ''
+    req.on('data', chunk => { body += chunk })
+    req.on('end', () => resolve(body))
+    req.on('error', reject)
+  })
+}
+
+// ─── Portfolio store (local dev, filesystem) ──────────────────────────────────
+
+const STORE_DIR = path.resolve('server-portfolios')
+fs.mkdirSync(STORE_DIR, { recursive: true })
+
+function portfolioPath(id: string) { return path.join(STORE_DIR, `${id}.json`) }
+
+function listSaved() {
+  return fs.readdirSync(STORE_DIR)
+    .filter(f => f.endsWith('.json'))
+    .map(f => {
+      try {
+        const p = JSON.parse(fs.readFileSync(path.join(STORE_DIR, f), 'utf-8'))
+        return { id: p.id, name: p.name, updatedAt: p.updatedAt }
+      } catch { return null }
+    })
+    .filter(Boolean)
+}
+
 function sendJson(res: ServerResponse, status: number, data: unknown) {
   res.writeHead(status, { 'Content-Type': 'application/json' })
   res.end(JSON.stringify(data))
@@ -140,14 +170,16 @@ export default defineConfig({
       name: 'taa-mock-api',
       configureServer(server) {
         server.middlewares.use(async (req, res, next) => {
-          if (req.url === '/api/taa/suggest' && req.method === 'POST') {
+          const url = req.url ?? ''
+
+          // ── TAA suggest ──────────────────────────────────────────────────────
+          if (url === '/api/taa/suggest' && req.method === 'POST') {
             try {
               const body = await parseBody(req) as { assets: TaaAsset[] }
               if (!Array.isArray(body?.assets) || body.assets.length === 0) {
                 sendJson(res, 400, { error: 'assets array required' })
                 return
               }
-              // Simulate network latency for realism
               await new Promise(r => setTimeout(r, 420))
               const { signal, tilts } = suggestTilts(body.assets)
               sendJson(res, 200, { signal, tilts, timestamp: new Date().toISOString() })
@@ -156,6 +188,43 @@ export default defineConfig({
             }
             return
           }
+
+          // ── Portfolio store ──────────────────────────────────────────────────
+          const portfolioBase = '/api/portfolios'
+          if (url.startsWith(portfolioBase)) {
+            const id = url.slice(portfolioBase.length).replace(/^\//, '').split('?')[0]
+            try {
+              if (req.method === 'GET' && !id) {
+                sendJson(res, 200, listSaved())
+                return
+              }
+              if (req.method === 'GET' && id) {
+                const file = portfolioPath(id)
+                if (!fs.existsSync(file)) { sendJson(res, 404, { error: 'Not found' }); return }
+                res.writeHead(200, { 'Content-Type': 'application/json' })
+                res.end(fs.readFileSync(file, 'utf-8'))
+                return
+              }
+              if (req.method === 'POST') {
+                const raw = await parseRawBody(req)
+                const p = JSON.parse(raw) as { id?: string }
+                const saveId = p.id ?? Math.random().toString(36).slice(2, 9)
+                fs.writeFileSync(portfolioPath(saveId), raw, 'utf-8')
+                sendJson(res, 200, { id: saveId })
+                return
+              }
+              if (req.method === 'DELETE' && id) {
+                const file = portfolioPath(id)
+                if (fs.existsSync(file)) fs.unlinkSync(file)
+                res.writeHead(204); res.end()
+                return
+              }
+            } catch (e) {
+              sendJson(res, 500, { error: String(e) })
+              return
+            }
+          }
+
           next()
         })
       },

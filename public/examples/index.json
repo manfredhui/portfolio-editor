@@ -1,0 +1,5 @@
+[
+  { "id": "conservative", "name": "Conservative Income", "description": "Heavy fixed income with defensive equity and gold. Suitable for capital preservation." },
+  { "id": "global-growth", "name": "Global Growth", "description": "Equity-led portfolio with broad geographic diversification and commodity hedge." },
+  { "id": "balanced", "name": "Balanced 60/40", "description": "Classic 60% equity / 40% bonds split across US and European markets." }
+]
