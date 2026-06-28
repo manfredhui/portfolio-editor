@@ -12,6 +12,7 @@
     {"id":"gld","name":"Gold ETF","type":"concrete","ticker":"GLD","eodhdSymbol":"GLD.US","assetClass":"Commodity","region":"Global","description":"Physical gold exposure"},
     {"id":"vnq","name":"US Real Estate ETF","type":"concrete","ticker":"VNQ","eodhdSymbol":"VNQ.US","assetClass":"Real Estate","region":"US","description":"US REITs"},
     {"id":"bci","name":"Bloomberg Commodity ETF","type":"concrete","ticker":"BCI","eodhdSymbol":"BCI.US","assetClass":"Commodity","region":"Global","description":"Broad commodity basket"},
+    {"id":"vt","name":"Total World Stock ETF","type":"concrete","ticker":"VT","eodhdSymbol":"VT.US","assetClass":"Equity","region":"Global","description":"~9,000 stocks across 48 countries — full global equity market cap"},
     {"id":"abs-us-eq","name":"US Equity Allocation","type":"abstract","assetClass":"Equity","region":"US","description":"Benchmark slot — link a real US equity fund"},
     {"id":"abs-eur-eq","name":"European Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real European equity fund"},
     {"id":"abs-jpn-eq","name":"Japanese Equity Allocation","type":"abstract","assetClass":"Equity","region":"Japan","description":"Benchmark slot — link a real Japan equity fund"},

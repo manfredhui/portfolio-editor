@@ -538,6 +538,73 @@ const MOCK: Record<string, NormalisedFundData> = {
     ],
   },
 
+  'VT.US': {
+    name: 'Vanguard Total World Stock ETF',
+    fundFamily: 'Vanguard',
+    category: 'World Large-Stock Blend',
+    nav: 112.84,
+    expenseRatio: 0.0007,
+    inceptionDate: '2008-06-24',
+    updateDate: '2026-06-27',
+    yields: { ytd: 11.4, oneYear: 17.6, threeYear: 8.8, fiveYear: 10.2 },
+    allocation: [
+      { type: 'Stock', net: 97.4 },
+      { type: 'Cash', net: 1.9 },
+      { type: 'Other', net: 0.7 },
+    ],
+    topHoldings: [
+      { name: 'Apple Inc', weight: 3.82 },
+      { name: 'Microsoft Corp', weight: 3.54 },
+      { name: 'Nvidia Corp', weight: 3.21 },
+      { name: 'Amazon.com Inc', weight: 2.18 },
+      { name: 'Alphabet Inc A', weight: 1.44 },
+      { name: 'Meta Platforms Inc A', weight: 1.31 },
+      { name: 'Alphabet Inc C', weight: 1.22 },
+      { name: 'Taiwan Semiconductor ADR', weight: 0.94 },
+      { name: 'Broadcom Inc', weight: 0.88 },
+      { name: 'Tesla Inc', weight: 0.81 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 61.8 },
+        { name: 'Latin America', pct: 1.2 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 13.4 },
+        { name: 'United Kingdom', pct: 3.8 },
+        { name: 'Europe Emerging', pct: 0.6 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Japan', pct: 5.6 },
+        { name: 'Asia Developed', pct: 3.2 },
+        { name: 'Asia Emerging', pct: 8.4 },
+        { name: 'Australasia', pct: 1.8 },
+      ]},
+      { group: 'Middle East / Africa', regions: [
+        { name: 'Africa / Middle East', pct: 0.2 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 10.8 },
+        { name: 'Financial Services', pct: 15.2 },
+        { name: 'Real Estate', pct: 2.8 },
+        { name: 'Basic Materials', pct: 3.6 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 6.4 },
+        { name: 'Healthcare', pct: 11.2 },
+        { name: 'Utilities', pct: 2.4 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 8.6 },
+        { name: 'Energy', pct: 4.2 },
+        { name: 'Industrials', pct: 11.4 },
+        { name: 'Technology', pct: 23.4 },
+      ]},
+    ],
+  },
+
 };
 
 export function getMockFundData(symbol: string): NormalisedFundData | null {
