@@ -1,0 +1,75 @@
+{
+  "assets": [
+    {"id":"vti","name":"US Total Market ETF","type":"concrete","ticker":"VTI","eodhdSymbol":"SWPPX.US","assetClass":"Equity","region":"US","description":"Broad US equity exposure"},
+    {"id":"vgk","name":"European Equity ETF","type":"concrete","ticker":"VGK","eodhdSymbol":"VGK.US","assetClass":"Equity","region":"Europe","description":"Developed European markets"},
+    {"id":"ewj","name":"Japan Equity ETF","type":"concrete","ticker":"EWJ","eodhdSymbol":"EWJ.US","assetClass":"Equity","region":"Japan","description":"Japanese equity markets"},
+    {"id":"vwo","name":"Emerging Markets ETF","type":"concrete","ticker":"VWO","eodhdSymbol":"VWO.US","assetClass":"Equity","region":"EM","description":"Broad emerging markets"},
+    {"id":"qqq","name":"Nasdaq 100 ETF","type":"concrete","ticker":"QQQ","eodhdSymbol":"QQQ.US","assetClass":"Equity","region":"US","description":"Top 100 Nasdaq stocks"},
+    {"id":"tlt","name":"US 20+ Yr Treasury ETF","type":"concrete","ticker":"TLT","eodhdSymbol":"TLT.US","assetClass":"Fixed Income","region":"US","description":"Long-duration US Treasuries"},
+    {"id":"ieag","name":"EUR Aggregate Bond ETF","type":"concrete","ticker":"IEAG","eodhdSymbol":"IEAG.LSE","assetClass":"Fixed Income","region":"Europe","description":"European investment-grade bonds"},
+    {"id":"tip","name":"US TIPS ETF","type":"concrete","ticker":"TIP","eodhdSymbol":"TIP.US","assetClass":"Fixed Income","region":"US","description":"Inflation-protected Treasuries"},
+    {"id":"hyg","name":"High Yield Bond ETF","type":"concrete","ticker":"HYG","eodhdSymbol":"HYG.US","assetClass":"Fixed Income","region":"US","description":"US high yield corporate bonds"},
+    {"id":"gld","name":"Gold ETF","type":"concrete","ticker":"GLD","eodhdSymbol":"GLD.US","assetClass":"Commodity","region":"Global","description":"Physical gold exposure"},
+    {"id":"vnq","name":"US Real Estate ETF","type":"concrete","ticker":"VNQ","eodhdSymbol":"VNQ.US","assetClass":"Real Estate","region":"US","description":"US REITs"},
+    {"id":"bci","name":"Bloomberg Commodity ETF","type":"concrete","ticker":"BCI","eodhdSymbol":"BCI.US","assetClass":"Commodity","region":"Global","description":"Broad commodity basket"},
+    {"id":"abs-us-eq","name":"US Equity Allocation","type":"abstract","assetClass":"Equity","region":"US","description":"Benchmark slot — link a real US equity fund"},
+    {"id":"abs-eur-eq","name":"European Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real European equity fund"},
+    {"id":"abs-jpn-eq","name":"Japanese Equity Allocation","type":"abstract","assetClass":"Equity","region":"Japan","description":"Benchmark slot — link a real Japan equity fund"},
+    {"id":"abs-em-eq","name":"EM Equity Allocation","type":"abstract","assetClass":"Equity","region":"EM","description":"Benchmark slot — link a real EM equity fund"},
+    {"id":"abs-fi","name":"Fixed Income Allocation","type":"abstract","assetClass":"Fixed Income","region":"Global","description":"Benchmark slot — link a real fixed income fund"},
+    {"id":"abs-msci-world","name":"MSCI World Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link any MSCI World tracking fund"}
+  ],
+  "bundles": [
+    {
+      "id":"global-equity","name":"Global Equity Model","type":"bundle","description":"Diversified global equity across US, Europe and Japan",
+      "components":[
+        {"assetId":"vti","weight":60},
+        {"assetId":"vgk","weight":25},
+        {"assetId":"ewj","weight":15}
+      ]
+    },
+    {
+      "id":"balanced-6040","name":"Balanced 60/40 Model","type":"bundle","description":"Classic 60% equity / 40% bonds allocation",
+      "components":[
+        {"assetId":"vti","weight":40},
+        {"assetId":"vgk","weight":20},
+        {"assetId":"tlt","weight":30},
+        {"assetId":"gld","weight":10}
+      ]
+    },
+    {
+      "id":"all-weather","name":"All Weather Model","type":"bundle","description":"Ray Dalio inspired all-weather allocation",
+      "components":[
+        {"assetId":"vti","weight":30},
+        {"assetId":"tlt","weight":40},
+        {"assetId":"tip","weight":15},
+        {"assetId":"gld","weight":7.5},
+        {"assetId":"bci","weight":7.5}
+      ]
+    },
+    {
+      "id":"msci-world-regions","name":"MSCI World (Regions)","type":"abstract-bundle","description":"MSCI World broken into 4 regional benchmark slots — link each to a regional fund",
+      "components":[
+        {"assetId":"abs-us-eq","weight":60},
+        {"assetId":"abs-eur-eq","weight":20},
+        {"assetId":"abs-jpn-eq","weight":10},
+        {"assetId":"abs-em-eq","weight":10}
+      ]
+    },
+    {
+      "id":"msci-world-plain","name":"MSCI World (Benchmark)","type":"abstract-bundle","description":"Single benchmark slot for MSCI World — link to any MSCI World tracking fund",
+      "components":[
+        {"assetId":"abs-msci-world","weight":100}
+      ]
+    },
+    {
+      "id":"global-multi-abs","name":"Global Multi-Asset (Benchmark)","type":"abstract-bundle","description":"Multi-asset benchmark template across equity and fixed income",
+      "components":[
+        {"assetId":"abs-us-eq","weight":35},
+        {"assetId":"abs-eur-eq","weight":20},
+        {"assetId":"abs-em-eq","weight":15},
+        {"assetId":"abs-fi","weight":30}
+      ]
+    }
+  ]
+}

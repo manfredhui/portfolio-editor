@@ -1,0 +1,106 @@
+import { Portfolio } from '../types';
+
+export const samplePortfolio: Portfolio = {
+  id: 'sample-1',
+  name: 'Sample Portfolio',
+  createdAt: '2026-06-28T00:00:00.000Z',
+  updatedAt: '2026-06-28T00:00:00.000Z',
+  root: {
+    id: 'root',
+    name: 'Portfolio Root',
+    nodeType: 'folder',
+    weight: NaN,
+    children: [
+      {
+        id: 'eq-folder',
+        name: 'Equity',
+        nodeType: 'folder',
+        weight: NaN,
+        children: [
+          {
+            id: 'vti-node',
+            name: 'US Total Market ETF',
+            nodeType: 'asset',
+            weight: 30,
+            assetId: 'vti',
+            children: [],
+          },
+          {
+            id: 'vgk-node',
+            name: 'European Equity ETF',
+            nodeType: 'asset',
+            weight: 15,
+            assetId: 'vgk',
+            children: [],
+          },
+          {
+            id: 'global-eq-bundle',
+            name: 'Global Equity Bundle',
+            nodeType: 'bundle',
+            weight: 15,
+            bundleId: 'global-equity',
+            collapsed: false,
+            children: [
+              {
+                id: 'bundle-vti',
+                name: 'US Total Market ETF',
+                nodeType: 'asset',
+                weight: 9,
+                assetId: 'vti',
+                children: [],
+              },
+              {
+                id: 'bundle-vgk',
+                name: 'European Equity ETF',
+                nodeType: 'asset',
+                weight: 3.75,
+                assetId: 'vgk',
+                children: [],
+              },
+              {
+                id: 'bundle-ewj',
+                name: 'Japan Equity ETF',
+                nodeType: 'asset',
+                weight: 2.25,
+                assetId: 'ewj',
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'fi-folder',
+        name: 'Fixed Income',
+        nodeType: 'folder',
+        weight: NaN,
+        children: [
+          {
+            id: 'tlt-node',
+            name: 'US 20+ Yr Treasury ETF',
+            nodeType: 'asset',
+            weight: 18,
+            assetId: 'tlt',
+            children: [],
+          },
+          {
+            id: 'ieag-node',
+            name: 'EUR Aggregate Bond ETF',
+            nodeType: 'asset',
+            weight: 12,
+            assetId: 'ieag',
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 'gld-node',
+        name: 'Gold ETF',
+        nodeType: 'asset',
+        weight: 10,
+        assetId: 'gld',
+        children: [],
+      },
+    ],
+  },
+};
