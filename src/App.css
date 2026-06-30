@@ -898,6 +898,17 @@
   background: #eff6ff;
 }
 
+.asset-select-group-label {
+  padding: 6px 12px 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+}
+
 .asset-select-name {
   flex: 1;
   font-size: 13px;

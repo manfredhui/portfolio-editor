@@ -95,8 +95,9 @@ export const usePortfolio = create<PortfolioStore>((set, get) => ({
     if (!portfolio) return;
     const assetDef = assetLibrary.assets.find((a) => a.id === assetId);
     if (!assetDef) return;
+    const nodeType = assetDef.type === 'abstract' ? 'abstract-asset' : 'asset';
     const child: PortfolioNode = {
-      id: createId(), name: assetDef.name, nodeType: 'asset', weight, tilt: 0, assetId, children: [],
+      id: createId(), name: assetDef.name, nodeType, weight, tilt: 0, assetId, children: [],
     };
     set({ portfolio: { ...portfolio, root: addChildToParent(portfolio.root, parentId, child), updatedAt: new Date().toISOString() } });
   },

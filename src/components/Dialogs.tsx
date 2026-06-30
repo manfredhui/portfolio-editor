@@ -114,16 +114,20 @@ interface AddAssetDialogProps {
 }
 
 export function AddAssetDialog({ assets, preselectedAssetId, onConfirm, onClose }: AddAssetDialogProps) {
-  const concreteAssets = assets.filter((a) => a.type === 'concrete');
-  const [selectedId, setSelectedId] = useState(preselectedAssetId ?? concreteAssets[0]?.id ?? '');
+  const allAssets = assets;
+  const [selectedId, setSelectedId] = useState(preselectedAssetId ?? assets.find((a) => a.type === 'concrete')?.id ?? '');
   const [weight, setWeight] = useState('10');
   const [search, setSearch] = useState('');
 
-  const filtered = concreteAssets.filter(
-    (a) =>
-      a.name.toLowerCase().includes(search.toLowerCase()) ||
-      (a.ticker ?? '').toLowerCase().includes(search.toLowerCase())
+  const q = search.toLowerCase();
+  const filteredConcrete = allAssets.filter(
+    (a) => a.type === 'concrete' && (a.name.toLowerCase().includes(q) || (a.ticker ?? '').toLowerCase().includes(q))
   );
+  const filteredAbstract = allAssets.filter(
+    (a) => a.type === 'abstract' && a.name.toLowerCase().includes(q)
+  );
+
+  const selectedAsset = allAssets.find((a) => a.id === selectedId);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,10 +138,10 @@ export function AddAssetDialog({ assets, preselectedAssetId, onConfirm, onClose 
   };
 
   return (
-    <ModalWrapper title="Add Asset" onClose={onClose}>
+    <ModalWrapper title="Add Asset / Benchmark Slot" onClose={onClose}>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label className="form-label">Search Assets</label>
+          <label className="form-label">Search</label>
           <input
             className="form-input"
             value={search}
@@ -147,9 +151,12 @@ export function AddAssetDialog({ assets, preselectedAssetId, onConfirm, onClose 
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Select Asset</label>
+          <label className="form-label">Select</label>
           <div className="asset-select-list">
-            {filtered.map((a) => (
+            {filteredConcrete.length > 0 && (
+              <div className="asset-select-group-label">Concrete Assets</div>
+            )}
+            {filteredConcrete.map((a) => (
               <div
                 key={a.id}
                 className={`asset-select-item ${selectedId === a.id ? 'selected' : ''}`}
@@ -160,11 +167,32 @@ export function AddAssetDialog({ assets, preselectedAssetId, onConfirm, onClose 
                 <span className="asset-select-meta">{a.assetClass} · {a.region}</span>
               </div>
             ))}
-            {filtered.length === 0 && <p className="empty-state-small">No assets match.</p>}
+            {filteredAbstract.length > 0 && (
+              <div className="asset-select-group-label">Benchmark Slots</div>
+            )}
+            {filteredAbstract.map((a) => (
+              <div
+                key={a.id}
+                className={`asset-select-item ${selectedId === a.id ? 'selected' : ''}`}
+                onClick={() => setSelectedId(a.id)}
+              >
+                <span className="badge badge-purple">Benchmark</span>
+                <span className="asset-select-name">{a.name}</span>
+                <span className="asset-select-meta">{a.assetClass} · {a.region}</span>
+              </div>
+            ))}
+            {filteredConcrete.length === 0 && filteredAbstract.length === 0 && (
+              <p className="empty-state-small">No assets match.</p>
+            )}
           </div>
         </div>
         <div className="form-group">
-          <label className="form-label">Weight (%)</label>
+          <label className="form-label">
+            Weight (%)
+            {selectedAsset?.type === 'abstract' && (
+              <span className="form-label-hint"> — benchmark slot, link a real asset later</span>
+            )}
+          </label>
           <input
             className="form-input"
             type="number"
@@ -177,7 +205,9 @@ export function AddAssetDialog({ assets, preselectedAssetId, onConfirm, onClose 
         </div>
         <div className="form-actions">
           <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="submit" className="btn btn-primary" disabled={!selectedId}>Add Asset</button>
+          <button type="submit" className="btn btn-primary" disabled={!selectedId}>
+            {selectedAsset?.type === 'abstract' ? 'Add Benchmark Slot' : 'Add Asset'}
+          </button>
         </div>
       </form>
     </ModalWrapper>
