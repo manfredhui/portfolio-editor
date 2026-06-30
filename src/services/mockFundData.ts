@@ -538,6 +538,403 @@ const MOCK: Record<string, NormalisedFundData> = {
     ],
   },
 
+  'GHYG.US': {
+    name: 'iShares Global High Yield Corporate Bond ETF',
+    fundFamily: 'BlackRock',
+    category: 'High Yield Bond',
+    nav: 57.34,
+    expenseRatio: 0.0040,
+    inceptionDate: '2012-04-03',
+    updateDate: '2026-06-27',
+    yields: { ytd: 4.8, oneYear: 8.2, threeYear: 4.1, fiveYear: 4.6 },
+    allocation: [
+      { type: 'Bond', net: 88.4 },
+      { type: 'Cash', net: 9.8 },
+      { type: 'Other', net: 1.8 },
+    ],
+    topHoldings: [
+      { name: 'TransDigm Group 6.375% 2029', weight: 0.62 },
+      { name: 'Altice France 5.125% 2029', weight: 0.58 },
+      { name: 'Carnival Corp 5.75% 2027', weight: 0.54 },
+      { name: 'Telecom Italia 5.303% 2030', weight: 0.51 },
+      { name: 'Ford Motor Co 4.346% 2026', weight: 0.48 },
+      { name: 'Ardagh Metal Packaging 4.0% 2029', weight: 0.45 },
+      { name: 'Volkswagen International 3.875% 2026', weight: 0.43 },
+      { name: 'Ineos Group 6.375% 2026', weight: 0.41 },
+      { name: 'Univision Communications 6.625% 2027', weight: 0.39 },
+      { name: 'Matterhorn Telecom 3.125% 2026', weight: 0.37 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 54.2 },
+        { name: 'Latin America', pct: 2.4 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 28.6 },
+        { name: 'United Kingdom', pct: 6.8 },
+        { name: 'Europe Emerging', pct: 2.2 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Asia Developed', pct: 2.8 },
+        { name: 'Asia Emerging', pct: 2.4 },
+        { name: 'Australasia', pct: 0.6 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 14.8 },
+        { name: 'Financial Services', pct: 8.4 },
+        { name: 'Basic Materials', pct: 6.2 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 6.4 },
+        { name: 'Healthcare', pct: 10.8 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 16.2 },
+        { name: 'Energy', pct: 12.4 },
+        { name: 'Industrials', pct: 14.6 },
+        { name: 'Technology', pct: 10.2 },
+      ]},
+    ],
+  },
+
+  'IHYU.LSE': {
+    name: 'iShares € High Yield Corp Bond UCITS ETF',
+    fundFamily: 'BlackRock',
+    category: 'European High Yield Bond',
+    nav: 89.12,
+    expenseRatio: 0.0050,
+    inceptionDate: '2010-06-28',
+    updateDate: '2026-06-27',
+    yields: { ytd: 4.2, oneYear: 7.6, threeYear: 3.4, fiveYear: 3.8 },
+    allocation: [
+      { type: 'Bond', net: 90.2 },
+      { type: 'Cash', net: 8.4 },
+      { type: 'Other', net: 1.4 },
+    ],
+    topHoldings: [
+      { name: 'Altice France 5.125% 2029', weight: 1.12 },
+      { name: 'Telecom Italia 5.303% 2030', weight: 0.98 },
+      { name: 'Ardagh Metal Packaging 4.0% 2029', weight: 0.88 },
+      { name: 'Ineos Group 6.375% 2026', weight: 0.84 },
+      { name: 'Matterhorn Telecom 3.125% 2026', weight: 0.76 },
+      { name: 'Loxam SAS 3.25% 2025', weight: 0.72 },
+      { name: 'Cirsa Finance International 7.875% 2023', weight: 0.68 },
+      { name: 'Nidda Healthcare 3.5% 2024', weight: 0.64 },
+      { name: 'Picard Groupe 4.0% 2026', weight: 0.61 },
+      { name: 'Parts Europe 6.5% 2027', weight: 0.57 },
+    ],
+    worldRegions: [
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 72.4 },
+        { name: 'United Kingdom', pct: 14.8 },
+        { name: 'Europe Emerging', pct: 6.2 },
+      ]},
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 4.8 },
+        { name: 'Latin America', pct: 1.8 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 16.4 },
+        { name: 'Financial Services', pct: 6.8 },
+        { name: 'Basic Materials', pct: 8.4 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 8.2 },
+        { name: 'Healthcare', pct: 12.4 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 18.6 },
+        { name: 'Energy', pct: 8.8 },
+        { name: 'Industrials', pct: 16.2 },
+        { name: 'Technology', pct: 4.2 },
+      ]},
+    ],
+  },
+
+  'LQD.US': {
+    name: 'iShares iBoxx $ Investment Grade Corporate Bond ETF',
+    fundFamily: 'BlackRock',
+    category: 'Corporate Bond',
+    nav: 110.48,
+    expenseRatio: 0.0014,
+    inceptionDate: '2002-07-22',
+    updateDate: '2026-06-27',
+    yields: { ytd: 2.4, oneYear: 5.8, threeYear: 1.2, fiveYear: 2.1 },
+    allocation: [
+      { type: 'Bond', net: 94.6 },
+      { type: 'Cash', net: 4.8 },
+      { type: 'Other', net: 0.6 },
+    ],
+    topHoldings: [
+      { name: 'Apple Inc 3.85% 2043', weight: 0.64 },
+      { name: 'Microsoft Corp 2.921% 2052', weight: 0.58 },
+      { name: 'JPMorgan Chase 3.702% 2051', weight: 0.54 },
+      { name: 'Goldman Sachs 3.814% 2051', weight: 0.52 },
+      { name: 'Bank of America 3.419% 2028', weight: 0.49 },
+      { name: 'Amazon.com Inc 3.875% 2038', weight: 0.47 },
+      { name: 'Anheuser-Busch InBev 4.375% 2038', weight: 0.44 },
+      { name: 'Wells Fargo 3.526% 2028', weight: 0.42 },
+      { name: 'Morgan Stanley 3.217% 2027', weight: 0.40 },
+      { name: 'AT&T Inc 3.65% 2051', weight: 0.38 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 84.2 },
+        { name: 'Latin America', pct: 2.4 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 8.6 },
+        { name: 'United Kingdom', pct: 3.2 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Asia Developed', pct: 1.6 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 6.4 },
+        { name: 'Financial Services', pct: 36.8 },
+        { name: 'Basic Materials', pct: 3.2 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 8.4 },
+        { name: 'Healthcare', pct: 10.2 },
+        { name: 'Utilities', pct: 8.6 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 10.8 },
+        { name: 'Energy', pct: 6.4 },
+        { name: 'Industrials', pct: 4.8 },
+        { name: 'Technology', pct: 4.4 },
+      ]},
+    ],
+  },
+
+  'CORP.LSE': {
+    name: 'iShares Core Global Corporate Bond UCITS ETF',
+    fundFamily: 'BlackRock',
+    category: 'Global Corporate Bond',
+    nav: 106.24,
+    expenseRatio: 0.0025,
+    inceptionDate: '2015-03-17',
+    updateDate: '2026-06-27',
+    yields: { ytd: 2.8, oneYear: 6.2, threeYear: 1.6, fiveYear: 2.4 },
+    allocation: [
+      { type: 'Bond', net: 93.8 },
+      { type: 'Cash', net: 5.4 },
+      { type: 'Other', net: 0.8 },
+    ],
+    topHoldings: [
+      { name: 'Apple Inc 3.85% 2043', weight: 0.52 },
+      { name: 'JPMorgan Chase 3.702% 2051', weight: 0.48 },
+      { name: 'Microsoft Corp 2.921% 2052', weight: 0.46 },
+      { name: 'Bank of America 3.419% 2028', weight: 0.44 },
+      { name: 'EDF SA 3.625% 2035', weight: 0.42 },
+      { name: 'Toyota Motor Finance 1.8% 2027', weight: 0.40 },
+      { name: 'Goldman Sachs 3.814% 2051', weight: 0.38 },
+      { name: 'Deutsche Telekom 2.25% 2030', weight: 0.36 },
+      { name: 'Anheuser-Busch InBev 2.0% 2028', weight: 0.34 },
+      { name: 'Volkswagen Leasing 0.875% 2025', weight: 0.32 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 56.4 },
+        { name: 'Latin America', pct: 2.8 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 24.6 },
+        { name: 'United Kingdom', pct: 8.4 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Japan', pct: 4.2 },
+        { name: 'Asia Developed', pct: 2.8 },
+        { name: 'Australasia', pct: 0.8 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 6.8 },
+        { name: 'Financial Services', pct: 34.2 },
+        { name: 'Basic Materials', pct: 4.2 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 8.6 },
+        { name: 'Healthcare', pct: 9.4 },
+        { name: 'Utilities', pct: 7.8 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 10.4 },
+        { name: 'Energy', pct: 5.8 },
+        { name: 'Industrials', pct: 8.4 },
+        { name: 'Technology', pct: 4.4 },
+      ]},
+    ],
+  },
+
+  'IEAC.LSE': {
+    name: 'iShares Core EUR Corporate Bond UCITS ETF',
+    fundFamily: 'BlackRock',
+    category: 'European Corporate Bond',
+    nav: 119.86,
+    expenseRatio: 0.0020,
+    inceptionDate: '2003-02-28',
+    updateDate: '2026-06-27',
+    yields: { ytd: 2.2, oneYear: 5.4, threeYear: 0.8, fiveYear: 1.6 },
+    allocation: [
+      { type: 'Bond', net: 95.2 },
+      { type: 'Cash', net: 4.2 },
+      { type: 'Other', net: 0.6 },
+    ],
+    topHoldings: [
+      { name: 'EDF SA 3.625% 2035', weight: 0.74 },
+      { name: 'Deutsche Telekom 2.25% 2030', weight: 0.68 },
+      { name: 'Volkswagen Leasing 0.875% 2025', weight: 0.64 },
+      { name: 'BNP Paribas 1.5% 2025', weight: 0.62 },
+      { name: 'LVMH Moët Hennessy 0.125% 2024', weight: 0.58 },
+      { name: 'Anheuser-Busch InBev 2.0% 2028', weight: 0.56 },
+      { name: 'Siemens Financieringsmaatschappij 1.65% 2026', weight: 0.54 },
+      { name: 'Daimler AG 1.875% 2026', weight: 0.52 },
+      { name: 'Engie SA 1.375% 2029', weight: 0.48 },
+      { name: 'Sanofi 1.375% 2028', weight: 0.46 },
+    ],
+    worldRegions: [
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 82.4 },
+        { name: 'United Kingdom', pct: 8.6 },
+        { name: 'Europe Emerging', pct: 2.2 },
+      ]},
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 5.4 },
+        { name: 'Latin America', pct: 1.4 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 10.4 },
+        { name: 'Financial Services', pct: 30.8 },
+        { name: 'Basic Materials', pct: 4.8 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 10.2 },
+        { name: 'Healthcare', pct: 8.6 },
+        { name: 'Utilities', pct: 12.4 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 8.4 },
+        { name: 'Energy', pct: 5.2 },
+        { name: 'Industrials', pct: 9.2 },
+      ]},
+    ],
+  },
+
+  'EMB.US': {
+    name: 'iShares J.P. Morgan USD Emerging Markets Bond ETF',
+    fundFamily: 'BlackRock',
+    category: 'Emerging Markets Bond',
+    nav: 87.62,
+    expenseRatio: 0.0039,
+    inceptionDate: '2007-12-17',
+    updateDate: '2026-06-27',
+    yields: { ytd: 3.8, oneYear: 7.4, threeYear: 1.8, fiveYear: 2.6 },
+    allocation: [
+      { type: 'Bond', net: 91.4 },
+      { type: 'Cash', net: 7.2 },
+      { type: 'Other', net: 1.4 },
+    ],
+    topHoldings: [
+      { name: 'Saudi Arabia 4.5% 2046', weight: 1.82 },
+      { name: 'Mexico 4.5% 2046', weight: 1.64 },
+      { name: 'Indonesia 4.45% 2051', weight: 1.48 },
+      { name: 'China 3.25% 2030', weight: 1.36 },
+      { name: 'Turkey 6.625% 2045', weight: 1.24 },
+      { name: 'Brazil 7.125% 2037', weight: 1.18 },
+      { name: 'Qatar 4.0% 2051', weight: 1.12 },
+      { name: 'Philippines 3.95% 2040', weight: 0.98 },
+      { name: 'Colombia 8.375% 2027', weight: 0.92 },
+      { name: 'South Africa 5.875% 2030', weight: 0.86 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'Latin America', pct: 22.4 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Emerging', pct: 10.8 },
+        { name: 'Africa / Middle East', pct: 24.6 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Asia Emerging', pct: 32.4 },
+        { name: 'Asia Developed', pct: 5.8 },
+      ]},
+      { group: 'Other', regions: [
+        { name: 'North America', pct: 4.0 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Sovereign', sectors: [
+        { name: 'Government', pct: 62.4 },
+        { name: 'Quasi-Sovereign', pct: 18.6 },
+      ]},
+      { group: 'Corporate', sectors: [
+        { name: 'Financial Services', pct: 8.4 },
+        { name: 'Energy', pct: 6.2 },
+        { name: 'Utilities', pct: 4.4 },
+      ]},
+    ],
+  },
+
+  'IGLO.LSE': {
+    name: 'iShares Global Govt Bond UCITS ETF',
+    fundFamily: 'BlackRock',
+    category: 'Global Government Bond',
+    nav: 95.18,
+    expenseRatio: 0.0020,
+    inceptionDate: '2006-11-28',
+    updateDate: '2026-06-27',
+    yields: { ytd: 1.4, oneYear: 3.8, threeYear: -1.2, fiveYear: 0.4 },
+    allocation: [
+      { type: 'Bond', net: 96.8 },
+      { type: 'Cash', net: 2.8 },
+      { type: 'Other', net: 0.4 },
+    ],
+    topHoldings: [
+      { name: 'US Treasury 4.25% 2025', weight: 2.84 },
+      { name: 'US Treasury 3.5% 2028', weight: 2.42 },
+      { name: 'US Treasury 3.875% 2030', weight: 2.18 },
+      { name: 'Japan 0.5% 2030 JGB', weight: 1.96 },
+      { name: 'Germany 2.3% 2033 Bund', weight: 1.74 },
+      { name: 'France OAT 0.75% 2028', weight: 1.52 },
+      { name: 'UK Gilt 4.25% 2032', weight: 1.38 },
+      { name: 'Italy BTP 3.0% 2029', weight: 1.24 },
+      { name: 'Spain Bono 3.15% 2030', weight: 1.12 },
+      { name: 'Canada 2.75% 2033', weight: 0.98 },
+    ],
+    worldRegions: [
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 44.8 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Japan', pct: 20.4 },
+        { name: 'Asia Developed', pct: 2.2 },
+        { name: 'Australasia', pct: 1.8 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 24.6 },
+        { name: 'United Kingdom', pct: 6.2 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Government', sectors: [
+        { name: 'Central Government', pct: 88.4 },
+        { name: 'Government-Guaranteed', pct: 6.8 },
+        { name: 'Supranational', pct: 4.8 },
+      ]},
+    ],
+  },
+
   'EWU.US': {
     name: 'iShares MSCI United Kingdom ETF',
     fundFamily: 'BlackRock',

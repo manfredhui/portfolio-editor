@@ -16,6 +16,13 @@
     {"id":"ewu","name":"UK Equity ETF","type":"concrete","ticker":"EWU","eodhdSymbol":"EWU.US","assetClass":"Equity","region":"Europe","description":"MSCI United Kingdom Index — large and mid-cap UK stocks"},
     {"id":"ezu","name":"Eurozone Equity ETF","type":"concrete","ticker":"EZU","eodhdSymbol":"EZU.US","assetClass":"Equity","region":"Europe","description":"MSCI EMU Index — eurozone equities, excludes UK and Switzerland"},
     {"id":"epp","name":"Asia-Pacific ex-Japan ETF","type":"concrete","ticker":"EPP","eodhdSymbol":"EPP.US","assetClass":"Equity","region":"Global","description":"MSCI Pacific ex Japan — Australia, Hong Kong, Singapore, New Zealand"},
+    {"id":"ghyg","name":"Global High Yield Corp Bond ETF","type":"concrete","ticker":"GHYG","eodhdSymbol":"GHYG.US","assetClass":"Fixed Income","region":"Global","description":"Global high yield corporate bonds, USD-hedged blend"},
+    {"id":"ihyu","name":"EUR High Yield Corp Bond ETF","type":"concrete","ticker":"IHYU","eodhdSymbol":"IHYU.LSE","assetClass":"Fixed Income","region":"Europe","description":"Euro-denominated high yield corporate bonds"},
+    {"id":"lqd","name":"USD IG Corp Bond ETF","type":"concrete","ticker":"LQD","eodhdSymbol":"LQD.US","assetClass":"Fixed Income","region":"US","description":"US dollar investment grade corporate bonds"},
+    {"id":"corp","name":"Global IG Corp Bond ETF","type":"concrete","ticker":"CORP","eodhdSymbol":"CORP.LSE","assetClass":"Fixed Income","region":"Global","description":"Global investment grade corporate bonds, USD-hedged"},
+    {"id":"ieac","name":"EUR IG Corp Bond ETF","type":"concrete","ticker":"IEAC","eodhdSymbol":"IEAC.LSE","assetClass":"Fixed Income","region":"Europe","description":"Euro investment grade corporate bonds"},
+    {"id":"emb","name":"Emerging Markets Bond ETF","type":"concrete","ticker":"EMB","eodhdSymbol":"EMB.US","assetClass":"Fixed Income","region":"EM","description":"USD-denominated sovereign and quasi-sovereign EM bonds"},
+    {"id":"iglo","name":"Global Government Bond ETF","type":"concrete","ticker":"IGLO","eodhdSymbol":"IGLO.LSE","assetClass":"Fixed Income","region":"Global","description":"Developed market government bonds across US, Europe and Japan"},
     {"id":"abs-us-eq","name":"US Equity Allocation","type":"abstract","assetClass":"Equity","region":"US","description":"Benchmark slot — link a real US equity fund"},
     {"id":"abs-eur-eq","name":"European Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real European equity fund"},
     {"id":"abs-jpn-eq","name":"Japanese Equity Allocation","type":"abstract","assetClass":"Equity","region":"Japan","description":"Benchmark slot — link a real Japan equity fund"},
@@ -24,7 +31,16 @@
     {"id":"abs-msci-world","name":"MSCI World Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link any MSCI World tracking fund"},
     {"id":"abs-uk-eq","name":"UK Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real UK equity fund"},
     {"id":"abs-eur-exuk-eq","name":"Europe ex-UK Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real Europe ex-UK equity fund"},
-    {"id":"abs-apac-exjpn-eq","name":"Asia-Pacific ex-Japan Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link a real Asia-Pacific ex-Japan fund"}
+    {"id":"abs-apac-exjpn-eq","name":"Asia-Pacific ex-Japan Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link a real Asia-Pacific ex-Japan fund"},
+    {"id":"abs-ghy","name":"Global High Yield Allocation","type":"abstract","assetClass":"Fixed Income","region":"Global","description":"Benchmark slot — link a global high yield bond fund"},
+    {"id":"abs-ushy","name":"US High Yield Allocation","type":"abstract","assetClass":"Fixed Income","region":"US","description":"Benchmark slot — link a US high yield bond fund"},
+    {"id":"abs-eurhy","name":"European High Yield Allocation","type":"abstract","assetClass":"Fixed Income","region":"Europe","description":"Benchmark slot — link a European high yield bond fund"},
+    {"id":"abs-gig","name":"Global IG Corporate Bond Allocation","type":"abstract","assetClass":"Fixed Income","region":"Global","description":"Benchmark slot — link a global investment grade corporate bond fund"},
+    {"id":"abs-usig","name":"US IG Corporate Bond Allocation","type":"abstract","assetClass":"Fixed Income","region":"US","description":"Benchmark slot — link a US investment grade corporate bond fund"},
+    {"id":"abs-eurig","name":"European IG Corporate Bond Allocation","type":"abstract","assetClass":"Fixed Income","region":"Europe","description":"Benchmark slot — link a European investment grade corporate bond fund"},
+    {"id":"abs-emd","name":"Emerging Market Debt Allocation","type":"abstract","assetClass":"Fixed Income","region":"EM","description":"Benchmark slot — link an emerging market debt fund"},
+    {"id":"abs-glgovt","name":"Global Government Bond Allocation","type":"abstract","assetClass":"Fixed Income","region":"Global","description":"Benchmark slot — link a global government bond fund"},
+    {"id":"abs-gold","name":"Gold Allocation","type":"abstract","assetClass":"Commodity","region":"Global","description":"Benchmark slot — link a gold or precious metals fund"}
   ],
   "bundles": [
     {
