@@ -13,12 +13,18 @@
     {"id":"vnq","name":"US Real Estate ETF","type":"concrete","ticker":"VNQ","eodhdSymbol":"VNQ.US","assetClass":"Real Estate","region":"US","description":"US REITs"},
     {"id":"bci","name":"Bloomberg Commodity ETF","type":"concrete","ticker":"BCI","eodhdSymbol":"BCI.US","assetClass":"Commodity","region":"Global","description":"Broad commodity basket"},
     {"id":"vt","name":"Total World Stock ETF","type":"concrete","ticker":"VT","eodhdSymbol":"VT.US","assetClass":"Equity","region":"Global","description":"~9,000 stocks across 48 countries — full global equity market cap"},
+    {"id":"ewu","name":"UK Equity ETF","type":"concrete","ticker":"EWU","eodhdSymbol":"EWU.US","assetClass":"Equity","region":"Europe","description":"MSCI United Kingdom Index — large and mid-cap UK stocks"},
+    {"id":"ezu","name":"Eurozone Equity ETF","type":"concrete","ticker":"EZU","eodhdSymbol":"EZU.US","assetClass":"Equity","region":"Europe","description":"MSCI EMU Index — eurozone equities, excludes UK and Switzerland"},
+    {"id":"epp","name":"Asia-Pacific ex-Japan ETF","type":"concrete","ticker":"EPP","eodhdSymbol":"EPP.US","assetClass":"Equity","region":"Global","description":"MSCI Pacific ex Japan — Australia, Hong Kong, Singapore, New Zealand"},
     {"id":"abs-us-eq","name":"US Equity Allocation","type":"abstract","assetClass":"Equity","region":"US","description":"Benchmark slot — link a real US equity fund"},
     {"id":"abs-eur-eq","name":"European Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real European equity fund"},
     {"id":"abs-jpn-eq","name":"Japanese Equity Allocation","type":"abstract","assetClass":"Equity","region":"Japan","description":"Benchmark slot — link a real Japan equity fund"},
     {"id":"abs-em-eq","name":"EM Equity Allocation","type":"abstract","assetClass":"Equity","region":"EM","description":"Benchmark slot — link a real EM equity fund"},
     {"id":"abs-fi","name":"Fixed Income Allocation","type":"abstract","assetClass":"Fixed Income","region":"Global","description":"Benchmark slot — link a real fixed income fund"},
-    {"id":"abs-msci-world","name":"MSCI World Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link any MSCI World tracking fund"}
+    {"id":"abs-msci-world","name":"MSCI World Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link any MSCI World tracking fund"},
+    {"id":"abs-uk-eq","name":"UK Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real UK equity fund"},
+    {"id":"abs-eur-exuk-eq","name":"Europe ex-UK Equity Allocation","type":"abstract","assetClass":"Equity","region":"Europe","description":"Benchmark slot — link a real Europe ex-UK equity fund"},
+    {"id":"abs-apac-exjpn-eq","name":"Asia-Pacific ex-Japan Allocation","type":"abstract","assetClass":"Equity","region":"Global","description":"Benchmark slot — link a real Asia-Pacific ex-Japan fund"}
   ],
   "bundles": [
     {
@@ -70,6 +76,48 @@
         {"assetId":"abs-eur-eq","weight":20},
         {"assetId":"abs-em-eq","weight":15},
         {"assetId":"abs-fi","weight":30}
+      ]
+    },
+    {
+      "id":"acwi-with-uk-etf","name":"MSCI ACWI with UK (ETF)","type":"bundle","description":"MSCI All Country World Index via ETFs — UK shown separately from Europe ex-UK",
+      "components":[
+        {"assetId":"vti","weight":65},
+        {"assetId":"ezu","weight":11},
+        {"assetId":"ewu","weight":4},
+        {"assetId":"ewj","weight":5},
+        {"assetId":"epp","weight":4},
+        {"assetId":"vwo","weight":11}
+      ]
+    },
+    {
+      "id":"acwi-europe-grouped-etf","name":"MSCI ACWI Europe Grouped (ETF)","type":"bundle","description":"MSCI All Country World Index via ETFs — UK and Europe combined into a single European allocation",
+      "components":[
+        {"assetId":"vti","weight":65},
+        {"assetId":"vgk","weight":15},
+        {"assetId":"ewj","weight":5},
+        {"assetId":"epp","weight":4},
+        {"assetId":"vwo","weight":11}
+      ]
+    },
+    {
+      "id":"acwi-with-uk-bm","name":"MSCI ACWI with UK (Benchmark)","type":"abstract-bundle","description":"MSCI ACWI benchmark slots — UK shown separately from Europe ex-UK. Link each slot to a regional fund.",
+      "components":[
+        {"assetId":"abs-us-eq","weight":65},
+        {"assetId":"abs-eur-exuk-eq","weight":11},
+        {"assetId":"abs-uk-eq","weight":4},
+        {"assetId":"abs-jpn-eq","weight":5},
+        {"assetId":"abs-apac-exjpn-eq","weight":4},
+        {"assetId":"abs-em-eq","weight":11}
+      ]
+    },
+    {
+      "id":"acwi-europe-grouped-bm","name":"MSCI ACWI Europe Grouped (Benchmark)","type":"abstract-bundle","description":"MSCI ACWI benchmark slots — UK and Europe combined. Link each slot to a regional fund.",
+      "components":[
+        {"assetId":"abs-us-eq","weight":65},
+        {"assetId":"abs-eur-eq","weight":15},
+        {"assetId":"abs-jpn-eq","weight":5},
+        {"assetId":"abs-apac-exjpn-eq","weight":4},
+        {"assetId":"abs-em-eq","weight":11}
       ]
     }
   ]

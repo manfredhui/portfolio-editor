@@ -538,6 +538,184 @@ const MOCK: Record<string, NormalisedFundData> = {
     ],
   },
 
+  'EWU.US': {
+    name: 'iShares MSCI United Kingdom ETF',
+    fundFamily: 'BlackRock',
+    category: 'United Kingdom Stock',
+    nav: 38.14,
+    expenseRatio: 0.0050,
+    inceptionDate: '1996-03-12',
+    updateDate: '2026-06-27',
+    yields: { ytd: 9.8, oneYear: 16.2, threeYear: 7.4, fiveYear: 5.8 },
+    allocation: [
+      { type: 'Non US Stock', net: 96.4 },
+      { type: 'Cash', net: 2.8 },
+      { type: 'Other', net: 0.8 },
+    ],
+    topHoldings: [
+      { name: 'AstraZeneca PLC', weight: 8.42 },
+      { name: 'Shell PLC', weight: 7.18 },
+      { name: 'HSBC Holdings PLC', weight: 5.94 },
+      { name: 'Unilever PLC', weight: 4.31 },
+      { name: 'BP PLC', weight: 3.87 },
+      { name: 'GSK PLC', weight: 3.52 },
+      { name: 'Rio Tinto PLC', weight: 3.14 },
+      { name: 'Diageo PLC', weight: 2.76 },
+      { name: 'BAE Systems PLC', weight: 2.48 },
+      { name: 'Rolls-Royce Holdings PLC', weight: 2.21 },
+    ],
+    worldRegions: [
+      { group: 'Greater Europe', regions: [
+        { name: 'United Kingdom', pct: 95.8 },
+        { name: 'Europe Developed', pct: 2.4 },
+      ]},
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 1.4 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Asia Developed', pct: 0.4 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 6.8 },
+        { name: 'Financial Services', pct: 22.4 },
+        { name: 'Real Estate', pct: 2.6 },
+        { name: 'Basic Materials', pct: 8.2 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 12.4 },
+        { name: 'Healthcare', pct: 14.8 },
+        { name: 'Utilities', pct: 3.4 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 4.6 },
+        { name: 'Energy', pct: 12.8 },
+        { name: 'Industrials', pct: 9.6 },
+        { name: 'Technology', pct: 2.4 },
+      ]},
+    ],
+  },
+
+  'EZU.US': {
+    name: 'iShares MSCI Eurozone ETF',
+    fundFamily: 'BlackRock',
+    category: 'Europe Stock',
+    nav: 54.28,
+    expenseRatio: 0.0051,
+    inceptionDate: '2000-07-25',
+    updateDate: '2026-06-27',
+    yields: { ytd: 13.6, oneYear: 18.4, threeYear: 7.2, fiveYear: 6.4 },
+    allocation: [
+      { type: 'Non US Stock', net: 97.2 },
+      { type: 'Cash', net: 2.1 },
+      { type: 'Other', net: 0.7 },
+    ],
+    topHoldings: [
+      { name: 'ASML Holding NV', weight: 6.82 },
+      { name: 'Novo Nordisk A/S B', weight: 5.14 },
+      { name: 'SAP SE', weight: 4.38 },
+      { name: 'LVMH Moët Hennessy', weight: 3.94 },
+      { name: 'Siemens AG', weight: 3.21 },
+      { name: 'Schneider Electric SE', weight: 2.88 },
+      { name: 'TotalEnergies SE', weight: 2.64 },
+      { name: 'BNP Paribas SA', weight: 2.42 },
+      { name: 'Airbus SE', weight: 2.18 },
+      { name: 'Allianz SE', weight: 1.96 },
+    ],
+    worldRegions: [
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 96.8 },
+        { name: 'Europe Emerging', pct: 0.8 },
+      ]},
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 1.6 },
+      ]},
+      { group: 'Greater Asia', regions: [
+        { name: 'Asia Developed', pct: 0.8 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 12.4 },
+        { name: 'Financial Services', pct: 18.6 },
+        { name: 'Real Estate', pct: 2.2 },
+        { name: 'Basic Materials', pct: 6.4 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 8.8 },
+        { name: 'Healthcare', pct: 12.6 },
+        { name: 'Utilities', pct: 4.8 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 4.2 },
+        { name: 'Energy', pct: 6.4 },
+        { name: 'Industrials', pct: 14.8 },
+        { name: 'Technology', pct: 8.8 },
+      ]},
+    ],
+  },
+
+  'EPP.US': {
+    name: 'iShares MSCI Pacific ex Japan ETF',
+    fundFamily: 'BlackRock',
+    category: 'Pacific/Asia ex-Japan Stock',
+    nav: 44.76,
+    expenseRatio: 0.0048,
+    inceptionDate: '2001-10-25',
+    updateDate: '2026-06-27',
+    yields: { ytd: 8.2, oneYear: 12.6, threeYear: 4.8, fiveYear: 5.2 },
+    allocation: [
+      { type: 'Non US Stock', net: 96.8 },
+      { type: 'Cash', net: 2.4 },
+      { type: 'Other', net: 0.8 },
+    ],
+    topHoldings: [
+      { name: 'BHP Group Ltd', weight: 8.14 },
+      { name: 'Commonwealth Bank of Australia', weight: 7.42 },
+      { name: 'CSL Ltd', weight: 5.28 },
+      { name: 'National Australia Bank Ltd', weight: 4.16 },
+      { name: 'Westpac Banking Corp', weight: 3.84 },
+      { name: 'ANZ Group Holdings Ltd', weight: 3.52 },
+      { name: 'AIA Group Ltd', weight: 3.18 },
+      { name: 'Macquarie Group Ltd', weight: 2.94 },
+      { name: 'Woolworths Group Ltd', weight: 2.42 },
+      { name: 'Rio Tinto Ltd', weight: 2.18 },
+    ],
+    worldRegions: [
+      { group: 'Greater Asia', regions: [
+        { name: 'Australasia', pct: 62.4 },
+        { name: 'Asia Developed', pct: 34.8 },
+        { name: 'Asia Emerging', pct: 1.4 },
+      ]},
+      { group: 'Americas', regions: [
+        { name: 'North America', pct: 0.8 },
+      ]},
+      { group: 'Greater Europe', regions: [
+        { name: 'Europe Developed', pct: 0.6 },
+      ]},
+    ],
+    sectorWeights: [
+      { group: 'Cyclical', sectors: [
+        { name: 'Consumer Cyclical', pct: 5.4 },
+        { name: 'Financial Services', pct: 32.8 },
+        { name: 'Real Estate', pct: 8.6 },
+        { name: 'Basic Materials', pct: 18.4 },
+      ]},
+      { group: 'Defensive', sectors: [
+        { name: 'Consumer Defensive', pct: 8.2 },
+        { name: 'Healthcare', pct: 9.4 },
+        { name: 'Utilities', pct: 3.2 },
+      ]},
+      { group: 'Sensitive', sectors: [
+        { name: 'Communication Services', pct: 4.8 },
+        { name: 'Energy', pct: 4.6 },
+        { name: 'Industrials', pct: 6.8 },
+        { name: 'Technology', pct: 1.8 },
+      ]},
+    ],
+  },
+
   'VT.US': {
     name: 'Vanguard Total World Stock ETF',
     fundFamily: 'Vanguard',
